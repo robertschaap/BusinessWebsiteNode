@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Fonts Tested - Font Sizes</title>
+    <link href="_css/stylesheet.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<header role="heading">
+    <h1>Fonts Tested</h1>
+    <h2>Font Sizes: Comparing Pixels and Relative Units</h2>
+    <nav id="navi" role="navigation" class="">
+        <a href="index.html">Home</a>
+        <a href="fontsizes.html" class="activelink">Font Sizes</a>
+        <a href="fontweights.html">Font Weights</a>
+        <a href="#" class="hamburger">&#9776;</a>
+    </nav>
+</header>
+
+<main role="main">
+    <section class="one">
+        <h4>PX</h4>
+        <p>Pixels provide an absolute value. Most browsers are set to 16px for the normal font size. If the user increases the font-size, the PX value will not change in certain browsers.</p>
+    </section>
+    <section class="two">
+        <h4>EM</h4>
+        <p>Ephemeral units provide a value based on the browser's base size. 1em in this case equals 16px. If the user increases the font size, all fonts will change relative to the new size. EM fonts also inherit size from other elements.</p>
+    </section>
+    <section class="three">
+        <h4>REM</h4>
+        <p>Relative Ephemeral units behave much like EM units with the exception that they are always relative to the browser's base size. </p>
+    </section>
+    <section class="span">
+        <h3>Examples</h3>
+        <p>In the examples below, the first line of text is written in a div. Nested in it is another div, and one more within that. The examples show how the measurement units are inherited.</p>
+    </section>
+    <section class="one">
+        <h4>Pixels</h4>
+        <div class="ftest px3">16px
+            <div class="ftest px2">32px
+                <div class="ftest px3">16px</div>
+            </div>
+        </div>
+    </section>
+    <section class="two">
+        <h4>EM Units</h4>
+        <div class="ftest em3">1em
+            <div class="ftest px2">2em
+                <div class="ftest em3">1em</div>
+            </div>
+        </div>
+    </section>
+    <section class="three">
+        <h4>REM Units</h4>
+        <div class="ftest rem3">1rem
+            <div class="ftest rem2">2rem
+                <div class="ftest rem3">1rem</div>
+            </div>
+        </div>
+    </section>
+    <section class="span">
+        <h3>Examples</h3>
+        <p>The pixel values are absolute and are retained properly. In the EM Units section however, something strange is happening. The top field is fine, the second is 2 times the size of that, however despite us setting the last field (which is nested within the second field) to 1em, it is equal in size to the one above. That's because it has inherited it's size. The REM section again is fine because it scales according to the brower's default size. If you change your browsers default font size, you will see this effect scale.</p>
+        <p>Finally, when it comes to layout, text elements seem to be interpreted slightly different between browsers. There are browsers where increasing the default text size will not change the pixel values but will change both EM and REM. This seems to make relative units a safer choice. Also, using EM values for the layout of your page might cause inheritance issues, whereas pixels will stay the same for layout. These factors are important to consider.</p>
+    </section>
+</main>
+
+<footer role="contentinfo">
+        <p>Fonts Tested 2017</p>
+</footer>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="_scripts/javascript.js"></script>
+</body>
+</html>

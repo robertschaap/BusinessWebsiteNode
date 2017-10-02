@@ -1,0 +1,155 @@
+/* Global Styles */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 900px;
+    font-family: 'Avenir Next', 'Arial', sans-serif;
+}
+main {
+    background-color: #d1d1e0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-top: 2rem;
+    position: relative;
+}
+main::after {
+    content: " ";
+    position: absolute;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    bottom: -10px;
+    background-color: #c2c2d6;
+    transform: rotate(45deg);
+}
+section {
+    padding: 1rem;
+}
+h1 {
+    font-size: 3rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 0rem 1rem;
+}
+h2 {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 400;
+    padding: 0rem 1rem 1rem 1rem;
+    line-height: 0.1;
+}
+h3 {
+    font-size: 1rem;
+    color: #666699;
+    margin: 0;
+}
+h4 {
+    font-size: 1rem;
+    color: #666699;
+    margin: 0;
+}
+p {
+    margin-top: 0;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+h3 a {
+    color: inherit;
+}
+
+/* Header & Footer*/
+header {
+    background-color: #a3a3c2;
+}
+nav {
+    overflow: hidden;
+}
+nav a {
+    display: block;
+    padding: 0.5rem 1rem;
+    float: left;
+    transition: all 0.3s ease;
+}
+nav a:hover {
+    background-color: #e0e0eb;
+}
+.activelink {
+    background-color: #c2c2d6;
+}
+.hamburger {
+    float: right;
+    display: none;
+}
+footer {
+    background-color: #c2c2d6;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+/* Columns */
+section.span {
+    grid-column-start: 1; 
+    grid-column-end: 4;  
+    background-color: #e0e0eb;
+}
+section.span.spanalt {
+    background-color: transparent;
+}
+
+/* Font Size Test Classes */
+.ftest {
+    margin: 0;
+}
+.px1 { font-size: 48px; }
+.px2 { font-size: 32px; }
+.px3 { font-size: 16px; }
+.em1 { font-size: 3em; }
+.em2 { font-size: 2em; }
+.em3 { font-size: 1em; }
+.rem1 { font-size: 3rem; }
+.rem2 { font-size: 2rem; }
+.rem3 { font-size: 1rem; }
+
+/* Media Queries */
+@media (max-width: 600px) {
+    nav a:not(.activelink) {
+        display: none;
+    }
+    nav {
+        position: relative;
+    }
+    nav.openburger a {
+        display: block;
+    }
+    nav a.hamburger {
+        display: block;
+        top: 0;
+        right: 0;
+        position: absolute;
+    }
+    nav a {
+        float: none;
+        display: block;
+    }
+    body {
+        width: 100%;
+    }
+    main {
+        grid-template-columns: 1fr;
+        padding-top: 0;
+    }
+    section.span {
+    grid-column-start: 1; 
+    grid-column-end: 1;   
+}
+}
